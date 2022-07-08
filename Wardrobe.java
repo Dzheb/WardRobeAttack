@@ -1,28 +1,29 @@
 package dz;
 
-import java.util.Random;
-
 public class Wardrobe {
   int State;
-  Random r = new Random();
+
+  public void setState(int state) {
+    State = state;
+  }
+
   String WRName;
 
-  public Wardrobe(int state,String WRName) {
-    this.State = state;
+  public Wardrobe(String WRName) {
+    this.State = 100;
     this.WRName = WRName;
-    
+
   }
-  
-  public  void getDamage(int Damage) {
-    // int res = 0;
+
+  public void getDamage(int Damage) {
+
     if (Damage < this.State) {
       this.State = this.State - Damage;
     }
   }
-  public String getState(){
-  return String.format("Состояние шкафа: %s %d процентов" , this.WRName,this.State);
 
+  public String getState() {
+    return String.format("Состояние шкафа: %s %d процентов", this.WRName, this.State);
+
+  }
 }
-}
-
-

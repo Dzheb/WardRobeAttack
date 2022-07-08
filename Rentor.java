@@ -1,12 +1,22 @@
 package dz;
 
-class  Rentor extends Human{
-  String status = "Съёмщик";
+// Съёмшик - может только отремонтировать шкаф
+public class  Rentor extends Human  implements WrRepair {
+  String Pername;
+ 
+  public Rentor(String pername) {
+    super(pername);
+    this.Pername = pername;
+    super.status = "съёмщик";
 
-  public String getStatus() {
-    return status;
   }
   public Rentor(String pername,int hands,int fingers,int head) {
     super(pername,hands,fingers,head);
   }
+  @Override
+  public void repair(Wardrobe target) {
+    target.State += WardrobeAttack.r.nextInt(0, 100 - target.State);
+        
+  }
+  
 }

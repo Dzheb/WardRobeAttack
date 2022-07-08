@@ -4,8 +4,8 @@ public class Kupe extends Wardrobe {
   String type = "Купе";
   int state;
 
-  public Kupe(int state,String WRName) {
-    super(state,WRName);
+  public Kupe(String WRName) {
+    super(WRName);
 
   }
   public String getType() {
